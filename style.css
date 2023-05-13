@@ -1,0 +1,210 @@
+header {
+    background-color: #F3F5FC;
+}
+
+.principal {
+    position: absolute;
+    background: #F3F5FC;
+    width: 1350px;
+    height: 524px;
+}
+
+.logo {
+    position: absolute;
+    background: #F3F5FC;
+    top: 40px;
+    width: 31.09px;
+    height: 48px;
+    left: 44px;
+}
+
+.input-texto {
+    position: relative;
+    /*width: 577px;
+    height: 48px;*/
+    
+    left: 240px;
+    top: 168px;    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    border: none;
+    color: #F3F5FC /*#0A3871;*/
+    text-transform: lowercase;
+
+}
+
+.input-texto:focus {
+    outline: none;
+}
+
+::placeholder {color: #0A3871;}
+{
+    outline: none;
+}
+
+
+.show-texto {
+    position: absolute;
+    /*width: 577px;
+    height: 48px;*/
+    border-radius: 24px;
+    left: 840px;
+    top: 168px;    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    border: none;
+    color: #0A3871;    
+    text-transform: lowercase;
+
+}
+
+.info {
+    /* Solo letras minúsculas y sin acentos */
+    position: relative;
+    width: 250px;
+    height: 18px;
+    left: 240px;
+    top: 240px;
+    
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    /* identical to box height, or 18px */
+    /* Gray/gray-400 */
+    color: #495057;
+
+    opacity: 0.8;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.boton {
+    display: flex;
+    position: relative;
+    top: 280px;
+    left: 240px;
+}
+
+.btn-encripta {
+    /* Button */
+
+
+    /* Auto layout */
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 24px;
+
+    width: 240px;
+    height: 67px;
+
+    /* Dark blue/dark-blue-300 */
+
+    background: #0A3871;
+    color: #FFFFFF;
+    border-radius: 24px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    text-align: center;
+}
+
+.btn-clipboard {
+    /* Button */
+
+    position: relative;
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    margin-left: 24px;
+
+    left: 840px;
+    top: 168px;
+    width: 240px;
+    height: 67px;
+
+    /* Light gray */
+
+    background: #D8DFE8;
+    /* Dark blue/dark-blue-300 */
+
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.btn-texto {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    justify-content: center;
+
+    /* White */
+
+    color: #FFFFFF;
+}
+
+.btn-texto-color {
+    color: #0A3871;
+}
+
+.btn-desencripta {
+    /* Button */
+
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    margin-left: 24px;
+
+    width: 240px;
+    height: 67px;
+
+    /* Light gray */
+
+    background: #D8DFE8;
+    /* Dark blue/dark-blue-300 */
+
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <!--<h1>Bienvenido a mi página web</h1>-->
+    </header>
+
+    <main>
+        <section class="principal">
+                <img src="images/logo.png" class="logo" alt="Logo de Alura">
+                <textarea id="mitexto" class="input-texto" required placeholder="Ingrese el texto aqui"></textarea>
+            <div class="info">
+                <img src="images/exclamation-circle-fill.png">
+                Solo letras minúsculas y sin acento
+            </div>
+            <div class="boton">
+                <button class="btn-encripta btn-texto" onclick="btn_encripta()">Encriptar</button>
+                <button class="btn-desencripta btn-texto btn-texto-color" onclick="btn_desencripta()">Desencriptar</button>
+            </div>
+            <div>
+                <textarea id="texto_enc" class="show-texto" cols="20" rows="3" placeholder="Ningun texto ingresado"></textarea>
+                <button class="btn-clipboard btn-texto btn-texto-color" onclick="btn_clipboard()">Copiar</button>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>Derechos reservados © 2023</p>
+    </footer>
+
+    <script type="text/javascript">
+        
+        /*
+            Las "llaves" de encriptación que utilizaremos son las siguientes:
+
+            La letra "e" es convertida para "enter"
+            La letra "i" es convertida para "imes"
+            La letra "a" es convertida para "ai"
+            La letra "o" es convertida para "ober"
+            La letra "u" es convertida para "ufat"
+
+            Requisitos:
+
+            Debe funcionar solo con letras minúsculas
+            No deben ser utilizados letras con acentos ni caracteres especiales
+            Debe ser posible convertir una palabra para la versión encriptada también devolver una palabra encriptada para su versión original.
+            
+            Por ejemplo:
+            
+            "gato" => "gaitober"
+            gaitober" => "gato"
+
+            La página debe tener campos para
+            inserción del texto que será encriptado o desencriptado, y el usuario debe poder escoger entre as dos opciones.
+            El resultado debe ser mostrado en la pantalla.
+        */
+
+        
+        function btn_encripta() {
+            
+            var mensaje_enc = document.querySelector(".input-texto").value;
+            var mensaje = "";
+            
+            var llaves = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
+            
+            for (var largo = 0; largo < mensaje_enc.length; largo++) {
+                if (mensaje_enc.includes(llaves[largo][0])) {
+                    mensaje_enc = mensaje_enc.replaceAll(llaves[largo][0], llaves[largo][1]);
+                }
+                mensaje = mensaje_enc;
+                document.getElementById('texto_enc').value = mensaje
+                document.getElementById('mitexto').value = ""
+
+            }
+            return mensaje;
+        }
+
+        function btn_desencripta() {
+            
+            var mensaje_enc = document.querySelector(".show-texto").value;
+            var mensaje = "";
+            
+            var llaves = [["enter", "e"], ["imes", "i"], ["ai", "a"], ["ober", "o"], ["ufat", "u"]];
+            
+            for (var largo = 0; largo < mensaje_enc.length; largo++) {
+                if (mensaje_enc.includes(llaves[largo][0])) {
+                    mensaje_enc = mensaje_enc.replaceAll(llaves[largo][0], llaves[largo][1]);
+                }
+                mensaje = mensaje_enc;
+                document.getElementById('mitexto').value = mensaje
+                document.getElementById('texto_enc').value = ""
+
+            }
+            
+            return mensaje;            
+        }
+        
+        function btn_clipboard() {
+            navigator.clipboard.writeText(document.getElementById('texto_enc').value)
+        }
+        
+        
+
+    </script>
+</body>
+
+</html>
